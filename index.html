@@ -83,7 +83,25 @@
     <section id="balises" class="section light">
       <div class="wrap split reverse">
         <div><p class="eyebrow" data-i18n="beaconTag">Le territoire en temps réel</p><h2 data-i18n="beaconTitle">Balises G1X</h2><p data-i18n="beaconText">Des stations météo intelligentes et autonomes conçues pour fournir des données précises, même loin des réseaux traditionnels.</p></div>
-        <div class="weather-panel"><div class="weather-device">⌁</div><div class="metrics"><b data-i18n="live">Données en temps réel</b><span>Vent <strong>18 km/h</strong></span><span>Température <strong>9.7 °C</strong></span><span>Pression <strong>1006 hPa</strong></span></div></div>
+        <div class="telemetry-panel" aria-label="Tableau de télémétrie de démonstration">
+          <div class="telemetry-head"><div><span class="status-dot"></span><b>STATION B-01</b><small>CÔTE-NORD · LoRa</small></div><span class="demo-badge" data-i18n="demoData">DONNÉES DE DÉMONSTRATION</span></div>
+          <div class="telemetry-kpis">
+            <div><span data-i18n="wind">Vent</span><strong>18.0 <small>km/h</small></strong><em>↗ 2.4</em></div>
+            <div><span data-i18n="temperature">Température</span><strong>9.7 <small>°C</small></strong><em>↘ 0.3</em></div>
+            <div><span data-i18n="pressure">Pression</span><strong>1006 <small>hPa</small></strong><em>→ 0</em></div>
+          </div>
+          <div class="chart-wrap">
+            <div class="chart-title"><b data-i18n="last24">Évolution — 24 dernières heures</b><span><i class="wind-key"></i><span data-i18n="wind">Vent</span> <i class="temp-key"></i><span data-i18n="temperature">Température</span></span></div>
+            <svg class="telemetry-chart" viewBox="0 0 620 230" role="img" aria-label="Courbes simulées du vent et de la température sur 24 heures">
+              <g class="grid-lines"><path d="M52 22V192M52 192H600M52 150H600M52 107H600M52 64H600"/><path d="M143 22V192M235 22V192M326 22V192M418 22V192M509 22V192M600 22V192"/></g>
+              <g class="axis-labels"><text x="44" y="196">0</text><text x="44" y="154">6</text><text x="38" y="111">12</text><text x="38" y="68">18</text><text x="50" y="216">00h</text><text x="187" y="216">06h</text><text x="323" y="216">12h</text><text x="460" y="216">18h</text><text x="580" y="216">24h</text></g>
+              <polyline class="wind-line" points="52,145 75,139 98,149 121,133 143,126 166,131 189,112 212,118 235,101 258,109 281,91 304,99 326,82 349,75 372,87 395,69 418,61 441,72 464,54 486,63 509,80 532,74 555,92 578,86 600,96"/>
+              <polyline class="temp-line" points="52,122 75,125 98,129 121,132 143,136 166,134 189,128 212,117 235,106 258,94 281,82 304,72 326,66 349,62 372,65 395,73 418,84 441,96 464,107 486,116 509,123 532,129 555,132 578,130 600,126"/>
+              <circle class="chart-point" cx="600" cy="96" r="5"/><circle class="chart-point temp" cx="600" cy="126" r="5"/>
+            </svg>
+          </div>
+          <p class="data-note" data-i18n="demoNote">Valeurs simulées pour illustrer l’interface. Connexion aux capteurs requise pour afficher des données réelles.</p>
+        </div>
       </div>
     </section>
 
@@ -97,7 +115,18 @@
     <section id="techops" class="section light compact">
       <div class="wrap split reverse">
         <div><p class="eyebrow" data-i18n="techopsTag">Infrastructure locale</p><h2>TechOps</h2><p data-i18n="techopsText">Des systèmes compacts, robustes et adaptés à l’intelligence locale, aux capteurs et aux environnements exigeants.</p></div>
-        <div class="mini-pc"><b>G1X</b><span></span><span></span><span></span></div>
+        <div class="edge-architecture" aria-label="Architecture d’un nœud TechOps">
+          <div class="architecture-head"><b>G1X EDGE NODE</b><span><i></i> <span data-i18n="systemOnline">SYSTÈME EN LIGNE</span></span></div>
+          <div class="architecture-body">
+            <div class="arch-column inputs"><small data-i18n="fieldInputs">ENTRÉES TERRAIN</small><span>LoRaWAN</span><span>RS-485</span><span>Modbus</span><span>GNSS</span></div>
+            <div class="arch-flow" aria-hidden="true">→</div>
+            <div class="compute-core"><small data-i18n="localCompute">CALCUL LOCAL</small><b>GEN1<br>NEXUS</b><div><span>CPU</span><span>NPU</span><span>TPM</span></div></div>
+            <div class="arch-flow" aria-hidden="true">→</div>
+            <div class="arch-column outputs"><small data-i18n="services">SERVICES</small><span data-i18n="analytics">Analytique</span><span data-i18n="alerts">Alertes</span><span>API</span><span data-i18n="sync">Synchronisation</span></div>
+          </div>
+          <div class="architecture-footer"><span><b>2 TB</b><small data-i18n="localStorage">Stockage local</small></span><span><b>AES-256</b><small data-i18n="encryption">Chiffrement</small></span><span><b>12–48 V</b><small data-i18n="power">Alimentation</small></span><span><b>IP67</b><small data-i18n="protection">Protection visée</small></span></div>
+          <p class="data-note" data-i18n="conceptNote">Architecture conceptuelle — spécifications finales à valider pendant le développement.</p>
+        </div>
       </div>
     </section>
 
