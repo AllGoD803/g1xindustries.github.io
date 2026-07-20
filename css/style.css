@@ -12,3 +12,9 @@ footer{padding:34px 0;color:#a9bbcc;background:#020914}.footer-grid{display:grid
 @media (max-width:480px){.site-header>.language{display:flex}.site-header{grid-template-columns:minmax(0,1fr) auto auto}.menu-toggle{grid-column:2}.hero{min-height:690px}.hero-content{padding-bottom:44px}.hero h1{font-size:clamp(38px,12.5vw,52px)}.hero-actions{display:grid}.button{width:100%}.hero-points{display:grid;gap:8px}.feature-card{display:block}.card-art{height:180px}.card-grid.four{grid-template-columns:1fr}.weather-panel{padding:20px;display:grid;gap:20px}.weather-device{font-size:80px}.metrics{width:100%;max-width:none}.scan-map{height:260px}.product-stage{height:250px}.project-card{padding:24px}.strip-grid a{padding-inline:5px}.footer-grid{gap:16px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 .poster-preview{display:block;height:340px;overflow:hidden;background:#071523}.poster-preview img{width:100%;height:100%;object-fit:cover;object-position:top}.poster-feature{display:block;width:min(100%,520px);margin-inline:auto;border:1px solid rgba(41,216,255,.3);box-shadow:0 24px 60px rgba(0,0,0,.25);overflow:hidden;background:#071523}.poster-feature img{display:block;width:100%;height:auto}.vision-showcase{background:linear-gradient(135deg,#edf6ff,#fff)}.vision-showcase p{color:var(--muted);line-height:1.7}@media(max-width:760px){.poster-preview{height:440px}.poster-preview img{object-fit:cover}.poster-feature{width:100%}}@media(max-width:480px){.poster-preview{height:390px}}
+/* Keep the complete official logo visible on small screens. */
+@media (max-width:760px){
+  .site-header .brand{width:165px;height:58px}
+  .site-header .brand-art{width:165px;height:58px;background-size:contain;background-position:center}
+  .footer-brand,.footer-brand .brand-art{width:190px;height:68px;background-size:contain;background-position:center}
+}
