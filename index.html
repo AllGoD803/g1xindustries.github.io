@@ -1,59 +1,122 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G1X Industries</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="G1X Industries développe au Québec des solutions d’énergie intelligente, d’intelligence locale et d’infrastructures technologiques autonomes.">
+  <meta name="theme-color" content="#06111f">
+  <title>G1X Industries | Énergie, technologie et intelligence locale</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+  <a class="skip-link" href="#main" data-i18n="skip">Aller au contenu</a>
+  <header class="site-header">
+    <a class="brand" href="#accueil" aria-label="G1X Industries — Accueil">
+      <span class="brand-art" aria-hidden="true"></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span><span class="sr-only" data-i18n="menu">Menu</span>
+    </button>
+    <nav id="main-nav" class="main-nav" aria-label="Navigation principale">
+      <a href="#technologies" data-i18n="navTech">Technologies</a>
+      <a href="#energie" data-i18n="navEnergy">Énergie</a>
+      <a href="#intelligence" data-i18n="navAI">Intelligence</a>
+      <a href="#projets" data-i18n="navProjects">Projets</a>
+      <a href="#apropos" data-i18n="navAbout">À propos</a>
+      <a href="#contact" data-i18n="navContact">Contact</a>
+    </nav>
+    <div class="language" aria-label="Choix de la langue">
+      <button type="button" data-lang="fr" class="active">FR</button><span>|</span><button type="button" data-lang="en">EN</button>
+    </div>
+  </header>
 
-    <!-- SECTION HERO -->
-    <section class="hero">
-        <img class="banner" src="assets/img/banner-g1x.png" alt="G1X Industries Bannière">
+  <main id="main">
+    <section id="accueil" class="hero">
+      <div class="hero-grid"></div>
+      <div class="hero-glow"></div>
+      <div class="hero-content wrap">
+        <p class="eyebrow" data-i18n="heroEyebrow">Conçu et développé au Québec</p>
+        <h1 data-i18n="heroTitle">L’intelligence locale rencontre l’énergie de demain.</h1>
+        <p class="hero-lead" data-i18n="heroLead">Énergie intelligente. Technologie locale. Innovation québécoise.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#technologies" data-i18n="discover">Découvrir G1X</a>
+          <a class="button secondary" href="#projets" data-i18n="seeTech">Voir nos technologies</a>
+        </div>
+        <div class="hero-points">
+          <span data-i18n="point1">Données locales</span>
+          <span data-i18n="point2">Énergie résiliente</span>
+          <span data-i18n="point3">IA en périphérie</span>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="nexus-box"><b>G1X</b><i></i><small>GEN1 NEXUS</small></div>
+        <div class="beacon"><i></i><b></b><span></span></div>
+        <div class="data-card"><small>G1X LIVE</small><strong>1015 hPa</strong><span>9.7 °C</span><em></em></div>
+      </div>
     </section>
 
-    <!-- CONTENU PRINCIPAL -->
-    <section class="content">
-
-        <h1>G1X INDUSTRIES</h1>
-        <p class="slogan">
-            Énergie. Technologie. Innovation et IA.<br>
-            Nous bâtissons l’avenir, une innovation à la fois.
-        </p>
-
-        <div class="card">
-            <h2>À propos de G1X Industries</h2>
-            <p>
-                G1X Industries développe des solutions technologiques et énergétiques combinant edge computing,
-                intelligence artificielle locale, infrastructures MCP avancées et automatisations intelligentes.
-            </p>
-        </div>
-
-        <div class="card">
-            <h2>Nos domaines principaux</h2>
-            <ul>
-                <li>⚡ G1X Energie — HydroCore, AeroChannel, SolarUltra</li>
-                <li>🖥️ G1X TechOps — mini-PC, eGPU, compute edge</li>
-                <li>🌦️ G1X Balises — stations météo intelligentes</li>
-                <li>🤖 G1X Intelligence — IA locale, MCP, automations</li>
-                <li>🛒 G1X Commerce — Etsy, Shopify, automatisations</li>
-                <li>⛏️ G1X GeoScan — analyse minière par IA</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>Contact</h2>
-            <p><a href="mailto:contact@g1xindustries.com">📧 contact@g1xindustries.com</a></p>
-            <p><a href="https://www.g1xindustries.com">🌐 www.g1xindustries.com</a></p>
-        </div>
-
+    <section id="technologies" class="tech-strip" aria-label="Technologies G1X">
+      <div class="wrap strip-grid">
+        <a href="#energie">◉ HydroCore</a><a href="#energie">≋ AeroChannel</a><a href="#energie">☼ SolarUltra</a>
+        <a href="#intelligence">◇ GEN1 Nexus</a><a href="#balises">⌁ Balises G1X</a><a href="#geoscan">△ GeoScan</a><a href="#techops">▱ TechOps</a>
+      </div>
     </section>
 
-    <footer>
-        © 2025 G1X Industries — Tous droits réservés.
-    </footer>
+    <section id="energie" class="section light">
+      <div class="wrap">
+        <div class="section-heading"><div><p class="eyebrow" data-i18n="energyTag">Solutions intégrées</p><h2 data-i18n="energyTitle">Énergie intelligente</h2></div><p data-i18n="energyIntro">Produire, stocker et optimiser une énergie propre, fiable et adaptée au territoire.</p></div>
+        <div class="card-grid three">
+          <article class="feature-card hydro"><div class="card-art"><span>H₂O</span></div><div class="card-copy"><h3>HydroCore</h3><p data-i18n="hydro">Microcentrales et systèmes hydroélectriques modulaires à faible impact.</p><a href="#contact" data-i18n="learn">En savoir plus →</a></div></article>
+          <article class="feature-card aero"><div class="card-art"><span>360°</span></div><div class="card-copy"><h3>AeroChannel</h3><p data-i18n="aero">Turbines et systèmes éoliens adaptés aux conditions nordiques.</p><a href="#contact" data-i18n="learn">En savoir plus →</a></div></article>
+          <article class="feature-card solar"><div class="card-art"><span>☀</span></div><div class="card-copy"><h3>SolarUltra</h3><p data-i18n="solar">Solutions solaires haute efficacité pour réseaux autonomes.</p><a href="#contact" data-i18n="learn">En savoir plus →</a></div></article>
+        </div>
+      </div>
+    </section>
 
+    <section id="intelligence" class="section dark split-section">
+      <div class="wrap split">
+        <div><p class="eyebrow" data-i18n="aiTag">Intelligence souveraine</p><h2 data-i18n="aiTitle">La puissance de l’IA, là où les données sont générées.</h2><p data-i18n="aiText">Traitement local, confidentialité renforcée et fonctionnement autonome, sans dépendance permanente au nuage.</p><ul class="checks"><li data-i18n="ai1">IA en périphérie</li><li data-i18n="ai2">Données locales, contrôle total</li><li data-i18n="ai3">Architecture évolutive</li></ul></div>
+        <div class="product-stage"><div class="product-box"><span>G1X</span><i></i><small>GEN1 NEXUS</small></div></div>
+      </div>
+    </section>
+
+    <section id="balises" class="section light">
+      <div class="wrap split reverse">
+        <div><p class="eyebrow" data-i18n="beaconTag">Le territoire en temps réel</p><h2 data-i18n="beaconTitle">Balises G1X</h2><p data-i18n="beaconText">Des stations météo intelligentes et autonomes conçues pour fournir des données précises, même loin des réseaux traditionnels.</p></div>
+        <div class="weather-panel"><div class="weather-device">⌁</div><div class="metrics"><b data-i18n="live">Données en temps réel</b><span>Vent <strong>18 km/h</strong></span><span>Température <strong>9.7 °C</strong></span><span>Pression <strong>1006 hPa</strong></span></div></div>
+      </div>
+    </section>
+
+    <section id="geoscan" class="section dark">
+      <div class="wrap split">
+        <div><p class="eyebrow" data-i18n="geoTag">Comprendre le sous-sol</p><h2>GeoScan</h2><p data-i18n="geoText">Acquisition multi-capteurs, cartographie avancée et intelligence artificielle pour transformer les données du terrain en décisions exploitables.</p></div>
+        <div class="scan-map"><i></i><i></i><i></i><span>G1X GEOSCAN</span></div>
+      </div>
+    </section>
+
+    <section id="techops" class="section light compact">
+      <div class="wrap split reverse">
+        <div><p class="eyebrow" data-i18n="techopsTag">Infrastructure locale</p><h2>TechOps</h2><p data-i18n="techopsText">Des systèmes compacts, robustes et adaptés à l’intelligence locale, aux capteurs et aux environnements exigeants.</p></div>
+        <div class="mini-pc"><b>G1X</b><span></span><span></span><span></span></div>
+      </div>
+    </section>
+
+    <section id="projets" class="section projects">
+      <div class="wrap"><div class="section-heading"><div><p class="eyebrow" data-i18n="projectsTag">Recherche et développement</p><h2 data-i18n="projectsTitle">Projets en développement</h2></div></div>
+        <div class="card-grid four">
+          <article class="project-card"><span class="project-icon">◉</span><h3>HydroCore</h3><p data-i18n="project1">Microproduction hydroélectrique modulaire</p></article>
+          <article class="project-card"><span class="project-icon">≋</span><h3>AeroChannel</h3><p data-i18n="project2">Énergie éolienne adaptée au climat nordique</p></article>
+          <article class="project-card"><span class="project-icon">⌁</span><h3>Balises G1X</h3><p data-i18n="project3">Réseau météo autonome et distribué</p></article>
+          <article class="project-card"><span class="project-icon">△</span><h3>GeoScan</h3><p data-i18n="project4">Cartographie géophysique intelligente</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="apropos" class="section about dark"><div class="wrap narrow"><p class="eyebrow">G1X Industries</p><h2 data-i18n="aboutTitle">Bâtir ici. Penser plus loin.</h2><p data-i18n="aboutText">G1X Industries développe au Québec des technologies qui rapprochent l’énergie, les données et l’intelligence. Notre objectif : créer des systèmes utiles, autonomes et conçus pour le réel.</p></div></section>
+    <section id="contact" class="section contact"><div class="wrap narrow"><p class="eyebrow" data-i18n="contactTag">Parlons de votre projet</p><h2 data-i18n="contactTitle">Construisons la prochaine innovation.</h2><a class="button primary" href="mailto:contact@g1xindustries.com">contact@g1xindustries.com</a></div></section>
+  </main>
+
+  <footer><div class="wrap footer-grid"><div class="footer-brand"><span class="brand-art"></span></div><p>Montréal, Québec, Canada<br>© 2026 G1X Industries</p><div><a href="#technologies" data-i18n="navTech">Technologies</a><a href="#contact" data-i18n="navContact">Contact</a></div><div class="language"><button type="button" data-lang="fr" class="active">FR</button><span>|</span><button type="button" data-lang="en">EN</button></div></div></footer>
+  <script src="js/app.js" defer></script>
 </body>
 </html>
