@@ -38,3 +38,29 @@ footer{padding:34px 0;color:#a9bbcc;background:#020914}.footer-grid{display:grid
   .compute-core{padding:22px 16px}
   .compute-core b{font-size:24px;line-height:1.05}
 }
+
+/* Interactive preview — preserves the original G1X visual identity. */
+.hero{--pointer-x:72%;--pointer-y:42%;overflow:hidden}
+.hero-grid{will-change:transform,background-position;animation:grid-drift 24s linear infinite}
+.hero-glow{will-change:transform;animation:ambient-breathe 7s ease-in-out infinite}
+.cursor-glow{position:absolute;z-index:-1;left:var(--pointer-x);top:var(--pointer-y);width:38rem;aspect-ratio:1;border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);opacity:.72;background:radial-gradient(circle,rgba(41,216,255,.2) 0,rgba(20,120,255,.1) 30%,transparent 68%);filter:blur(8px);transition:left .2s ease-out,top .2s ease-out}
+.interactive-field{position:absolute;inset:76px 0 0;z-index:-1;overflow:hidden;pointer-events:none;opacity:.78}
+.data-orbit{position:absolute;border:1px solid rgba(41,216,255,.16);border-radius:50%;box-shadow:inset 0 0 32px rgba(20,120,255,.05),0 0 24px rgba(20,120,255,.06)}
+.data-orbit:before,.data-orbit:after{content:"";position:absolute;width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan),0 0 24px var(--blue)}
+.orbit-one{width:430px;height:430px;right:5%;top:8%;animation:orbit-turn 26s linear infinite}.orbit-one:before{left:11%;top:18%}.orbit-one:after{right:7%;bottom:27%}
+.orbit-two{width:230px;height:230px;right:19%;top:25%;border-style:dashed;animation:orbit-turn 18s linear infinite reverse}.orbit-two:before{right:17%;top:7%}.orbit-two:after{left:3%;bottom:35%}
+.signal-line{position:absolute;height:1px;transform-origin:left;background:linear-gradient(90deg,transparent,rgba(41,216,255,.6),transparent);filter:drop-shadow(0 0 5px rgba(41,216,255,.75));animation:data-sweep 5.5s ease-in-out infinite}
+.signal-one{width:390px;right:5%;top:31%;transform:rotate(-18deg)}.signal-two{width:310px;right:10%;top:66%;transform:rotate(13deg);animation-delay:-2.4s}
+.signal-node{position:absolute;width:6px;height:6px;border:1px solid #b6f5ff;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan),0 0 30px rgba(20,120,255,.9);animation:node-pulse 2.6s ease-in-out infinite}
+.node-one{right:33%;top:21%}.node-two{right:12%;top:46%;animation-delay:-.8s}.node-three{right:27%;top:73%;animation-delay:-1.6s}
+.brand{position:relative;isolation:isolate}.brand:before{content:"";position:absolute;z-index:-1;inset:7px -8px;border-radius:50%;opacity:.35;background:radial-gradient(ellipse,rgba(41,216,255,.42),transparent 68%);filter:blur(12px);animation:brand-aura 4.8s ease-in-out infinite}.site-header .brand-art{filter:drop-shadow(0 0 5px rgba(41,216,255,.28));transition:filter .35s ease,transform .35s ease}.site-header .brand:hover .brand-art,.site-header .brand:focus-visible .brand-art{filter:drop-shadow(0 0 7px rgba(41,216,255,.8)) drop-shadow(0 0 18px rgba(20,120,255,.5));transform:translateY(-1px)}
+.section.dark,.vision-showcase{position:relative;isolation:isolate;overflow:hidden}.section.dark:before,.vision-showcase:before{content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;background:radial-gradient(circle at var(--section-x,75%) var(--section-y,35%),rgba(20,120,255,.11),transparent 30%);transition:background-position .25s ease-out}
+.reveal-ready{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}.reveal-ready.is-visible{opacity:1;transform:none}
+@keyframes grid-drift{to{background-position:42px 42px}}
+@keyframes ambient-breathe{0%,100%{transform:scale(.92);opacity:.7}50%{transform:scale(1.08);opacity:1}}
+@keyframes orbit-turn{to{transform:rotate(360deg)}}
+@keyframes data-sweep{0%,100%{opacity:.18;clip-path:inset(0 100% 0 0)}45%,65%{opacity:.75;clip-path:inset(0 0 0 0)}}
+@keyframes node-pulse{0%,100%{transform:scale(.7);opacity:.35}50%{transform:scale(1.45);opacity:1}}
+@keyframes brand-aura{0%,100%{opacity:.22;transform:scale(.94)}50%{opacity:.48;transform:scale(1.04)}}
+@media(max-width:760px){.interactive-field{inset:68px 0 0;opacity:.48}.orbit-one{width:310px;height:310px;right:-20%;top:8%}.orbit-two{width:170px;height:170px;right:5%;top:25%}.cursor-glow{width:25rem;opacity:.5;filter:blur(14px)}.signal-line{opacity:.5}.section.dark:before,.vision-showcase:before{background:radial-gradient(circle at 80% 25%,rgba(20,120,255,.09),transparent 34%)}}
+@media(prefers-reduced-motion:reduce){.reveal-ready{opacity:1;transform:none}.cursor-glow{display:none}}
