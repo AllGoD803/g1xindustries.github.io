@@ -91,4 +91,10 @@ footer{padding:34px 0;color:#a9bbcc;background:#020914}.footer-grid{display:grid
 
 /* Safety rollback: one untouched official logo, with no animated overlay. */
 .site-header .brand:before,.site-header .brand-art:after{display:none!important}
-.site-header .brand-art,.site-header .brand:hover .brand-art,.site-header .brand:focus-visible .brand-art,.site-header .brand.brand-activated .brand-art{animation:none!important;filter:none!important;transform:none!important}
+
+/* Single-layer interaction: animate the official bitmap itself, never a duplicate. */
+.site-header .brand .brand-art{transform-origin:center!important;will-change:transform,filter;animation:official-logo-single-idle 4.8s ease-in-out infinite!important}
+.site-header .brand.brand-activated .brand-art{animation:official-logo-single-tap 1.05s cubic-bezier(.2,.8,.2,1) both!important}
+@keyframes official-logo-single-idle{0%,62%,100%{transform:scale(1);filter:brightness(1) drop-shadow(0 0 0 transparent)}76%{transform:scale(1.035);filter:brightness(1.35) drop-shadow(0 0 7px rgba(41,216,255,.9)) drop-shadow(0 0 16px rgba(20,120,255,.65))}88%{transform:scale(1.01);filter:brightness(1.1) drop-shadow(0 0 4px rgba(41,216,255,.55))}}
+@keyframes official-logo-single-tap{0%{transform:scale(1);filter:brightness(1)}38%{transform:scale(1.09);filter:brightness(1.65) drop-shadow(0 0 9px #29d8ff) drop-shadow(0 0 23px rgba(20,120,255,.9))}68%{transform:scale(.99);filter:brightness(1.12) drop-shadow(0 0 5px rgba(41,216,255,.65))}100%{transform:scale(1);filter:brightness(1)}}
+@media(prefers-reduced-motion:reduce){.site-header .brand .brand-art{animation:none!important}}
