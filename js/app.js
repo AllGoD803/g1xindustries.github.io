@@ -30,6 +30,17 @@ function updateAtmosphere(event){
 hero?.addEventListener('pointermove',updateAtmosphere,{passive:true});
 hero?.addEventListener('touchmove',updateAtmosphere,{passive:true});
 
+const headerBrand=document.querySelector('.site-header .brand');
+let brandTimer;
+function activateBrand(){
+  clearTimeout(brandTimer);
+  headerBrand?.classList.remove('brand-activated');
+  requestAnimationFrame(()=>headerBrand?.classList.add('brand-activated'));
+  brandTimer=setTimeout(()=>headerBrand?.classList.remove('brand-activated'),1100);
+}
+headerBrand?.addEventListener('pointerdown',activateBrand,{passive:true});
+headerBrand?.addEventListener('focus',activateBrand);
+
 document.querySelectorAll('.section-heading,.feature-card,.split>*,.project-card,.contact .narrow').forEach(node=>node.classList.add('reveal-ready'));
 if('IntersectionObserver'in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
   const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
