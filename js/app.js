@@ -11,3 +11,31 @@ menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menu
 function setLanguage(lang){const dictionary=translations[lang]||translations.fr;document.documentElement.lang=lang;document.querySelectorAll('[data-i18n]').forEach(node=>{const value=dictionary[node.dataset.i18n];if(value)node.textContent=value;});document.querySelectorAll('.localized-poster').forEach(image=>{image.src=lang==='en'?image.dataset.enSrc:image.dataset.frSrc;});document.querySelectorAll('.localized-poster-link').forEach(link=>{link.href=lang==='en'?link.dataset.enSrc:link.dataset.frSrc;});document.querySelectorAll('[data-lang]').forEach(button=>button.classList.toggle('active',button.dataset.lang===lang));localStorage.setItem('g1x-language',lang);}
 document.querySelectorAll('[data-lang]').forEach(button=>button.addEventListener('click',()=>setLanguage(button.dataset.lang)));
 setLanguage(localStorage.getItem('g1x-language')||'fr');
+
+// Lightweight interactive atmosphere. Pointer updates are batched per frame.
+const hero=document.querySelector('.hero');
+let pointerFrame=0;
+function updateAtmosphere(event){
+  if(!hero||pointerFrame)return;
+  pointerFrame=requestAnimationFrame(()=>{
+    const rect=hero.getBoundingClientRect();
+    const point=event.touches?.[0]||event;
+    const x=Math.max(0,Math.min(100,((point.clientX-rect.left)/rect.width)*100));
+    const y=Math.max(0,Math.min(100,((point.clientY-rect.top)/rect.height)*100));
+    hero.style.setProperty('--pointer-x',`${x}%`);
+    hero.style.setProperty('--pointer-y',`${y}%`);
+    pointerFrame=0;
+  });
+}
+hero?.addEventListener('pointermove',updateAtmosphere,{passive:true});
+hero?.addEventListener('touchmove',updateAtmosphere,{passive:true});
+
+document.querySelectorAll('.section-heading,.feature-card,.split>*,.project-card,.contact .narrow').forEach(node=>node.classList.add('reveal-ready'));
+if('IntersectionObserver'in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add('is-visible');revealObserver.unobserve(entry.target);}
+  }),{threshold:.12,rootMargin:'0px 0px -45px'});
+  document.querySelectorAll('.reveal-ready').forEach(node=>revealObserver.observe(node));
+}else{
+  document.querySelectorAll('.reveal-ready').forEach(node=>node.classList.add('is-visible'));
+}
