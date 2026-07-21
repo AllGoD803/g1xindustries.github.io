@@ -132,12 +132,12 @@ html.motion-demo .site-header .brand.brand-activated .brand-art.animated-officia
 }
 .animated-official-logo>span{position:absolute;inset:0;background:url('../assets/img/logo-g1x-officiel-transparent.png?v=tree-current-11') center/contain no-repeat;pointer-events:none}
 .animated-official-logo .logo-wordmark{clip-path:inset(0 0 0 38%);filter:drop-shadow(0 0 3px rgba(255,255,255,.12))}
-.animated-official-logo .logo-tree{clip-path:inset(100% 70% 0 0);transform-origin:16% 88%;animation:official-tree-build 8s cubic-bezier(.35,0,.18,1) infinite!important}
-.animated-official-logo .logo-current{clip-path:inset(88% 70% 0 0);opacity:0;filter:brightness(2.2) saturate(1.35) drop-shadow(0 0 5px #fff) drop-shadow(0 0 13px #29d8ff);animation:official-tree-current 8s cubic-bezier(.35,0,.18,1) infinite!important}
+.animated-official-logo .logo-tree{clip-path:inset(100% 66% 0 0);transform-origin:16% 88%;animation:official-tree-build 8s cubic-bezier(.35,0,.18,1) infinite!important}
+.animated-official-logo .logo-current{clip-path:inset(88% 66% 0 0);opacity:0;filter:brightness(2.2) saturate(1.35) drop-shadow(0 0 5px #fff) drop-shadow(0 0 13px #29d8ff);animation:official-tree-current 8s cubic-bezier(.35,0,.18,1) infinite!important}
 .animated-official-logo .logo-current{display:none!important}
 .brand.brand-activated .animated-official-logo .logo-tree{animation:official-tree-build-tap 1.35s cubic-bezier(.2,.8,.2,1) both!important}
 .brand.brand-activated .animated-official-logo .logo-current{animation:official-tree-current-tap 1.35s cubic-bezier(.2,.8,.2,1) both!important}
-@keyframes official-tree-build{0%,12%{clip-path:inset(100% 70% 0 0);opacity:0;filter:brightness(.75)}50%,92%{clip-path:inset(0 70% 0 0);opacity:1;filter:brightness(1.2) drop-shadow(0 0 6px rgba(41,216,255,.72))}100%{clip-path:inset(0 70% 0 0);opacity:.92;filter:brightness(1)}}
-@keyframes official-tree-current{0%,11%{clip-path:inset(92% 70% 0 0);opacity:0}15%{opacity:1}50%{clip-path:inset(0 70% 88% 0);opacity:1}57%,100%{clip-path:inset(0 70% 88% 0);opacity:0}}
-@keyframes official-tree-build-tap{0%{clip-path:inset(100% 70% 0 0);opacity:.1}70%,100%{clip-path:inset(0 70% 0 0);opacity:1;filter:brightness(1.4) drop-shadow(0 0 8px #29d8ff)}}
-@keyframes official-tree-current-tap{0%{clip-path:inset(91% 70% 0 0);opacity:0}15%{opacity:1}72%{clip-path:inset(0 70% 88% 0);opacity:1}100%{clip-path:inset(0 70% 88% 0);opacity:0}}
+@keyframes official-tree-build{0%,12%{clip-path:inset(100% 66% 0 0);opacity:0;filter:brightness(.75)}50%,92%{clip-path:inset(0 66% 0 0);opacity:1;filter:brightness(1.2) drop-shadow(0 0 6px rgba(41,216,255,.72))}100%{clip-path:inset(0 66% 0 0);opacity:.92;filter:brightness(1)}}
+@keyframes official-tree-current{0%,11%{clip-path:inset(92% 66% 0 0);opacity:0}15%{opacity:1}50%{clip-path:inset(0 66% 88% 0);opacity:1}57%,100%{clip-path:inset(0 66% 88% 0);opacity:0}}
+@keyframes official-tree-build-tap{0%{clip-path:inset(100% 66% 0 0);opacity:.1}70%,100%{clip-path:inset(0 66% 0 0);opacity:1;filter:brightness(1.4) drop-shadow(0 0 8px #29d8ff)}}
+@keyframes official-tree-current-tap{0%{clip-path:inset(91% 66% 0 0);opacity:0}15%{opacity:1}72%{clip-path:inset(0 66% 88% 0);opacity:1}100%{clip-path:inset(0 66% 88% 0);opacity:0}}
