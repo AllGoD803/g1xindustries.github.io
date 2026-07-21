@@ -79,3 +79,12 @@ footer{padding:34px 0;color:#a9bbcc;background:#020914}.footer-grid{display:grid
 @keyframes circuit-power-tap{0%{stroke-dashoffset:1;opacity:.3}62%,100%{stroke-dashoffset:0;opacity:1}}
 @keyframes node-tap{0%,42%{fill:#06111f;transform:scale(.75)}72%{fill:#fff;filter:drop-shadow(0 0 8px #29d8ff) drop-shadow(0 0 16px #1478ff);transform:scale(1.35)}100%{fill:#d9fbff;transform:scale(1)}}
 @media(prefers-reduced-motion:reduce){.circuit-overlay *{animation:none!important}.circuit-overlay{display:none}}
+
+/* Official logo v6: exact PNG silhouette, with a non-destructive light sweep. */
+.site-header .brand-art,.footer-brand .brand-art{background-image:url('../assets/img/logo-g1x-officiel-transparent.png');background-size:contain;background-position:center;background-repeat:no-repeat}
+.site-header .brand-art{position:relative;isolation:isolate}
+.site-header .brand-art:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(105deg,transparent 25%,rgba(255,255,255,.08) 39%,#fff 49%,rgba(41,216,255,.58) 56%,transparent 70%);background-size:260% 100%;background-position:130% 0;-webkit-mask:url('../assets/img/logo-g1x-officiel-transparent.png') center/contain no-repeat;mask:url('../assets/img/logo-g1x-officiel-transparent.png') center/contain no-repeat;opacity:0;animation:official-logo-energy 5.2s ease-in-out infinite}
+.site-header .brand.brand-activated .brand-art:after{animation:official-logo-tap 1s ease-out both}
+@keyframes official-logo-energy{0%,55%{opacity:0;background-position:130% 0}64%{opacity:1}84%{opacity:.9;background-position:-130% 0}100%{opacity:0;background-position:-130% 0}}
+@keyframes official-logo-tap{0%{opacity:0;background-position:130% 0}20%{opacity:1}78%{opacity:1;background-position:-130% 0}100%{opacity:0;background-position:-130% 0}}
+@media(prefers-reduced-motion:reduce){.site-header .brand-art:after{display:none}}
