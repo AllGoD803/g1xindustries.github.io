@@ -98,3 +98,25 @@ footer{padding:34px 0;color:#a9bbcc;background:#020914}.footer-grid{display:grid
 @keyframes official-logo-single-idle{0%,62%,100%{transform:scale(1);filter:brightness(1) drop-shadow(0 0 0 transparent)}76%{transform:scale(1.035);filter:brightness(1.35) drop-shadow(0 0 7px rgba(41,216,255,.9)) drop-shadow(0 0 16px rgba(20,120,255,.65))}88%{transform:scale(1.01);filter:brightness(1.1) drop-shadow(0 0 4px rgba(41,216,255,.55))}}
 @keyframes official-logo-single-tap{0%{transform:scale(1);filter:brightness(1)}38%{transform:scale(1.09);filter:brightness(1.65) drop-shadow(0 0 9px #29d8ff) drop-shadow(0 0 23px rgba(20,120,255,.9))}68%{transform:scale(.99);filter:brightness(1.12) drop-shadow(0 0 5px rgba(41,216,255,.65))}100%{transform:scale(1);filter:brightness(1)}}
 @media(prefers-reduced-motion:reduce){.site-header .brand .brand-art{animation:none!important}}
+
+/* Explicit motion preview. The motion-demo class is intentionally limited to
+   this unpublished branch so Windows' reduced-motion preference cannot make
+   the requested animation test appear completely static. */
+html.motion-demo .hero-grid{animation:demo-grid-drift 8s linear infinite!important}
+html.motion-demo .hero-glow{animation:demo-ambient-breathe 4s ease-in-out infinite!important}
+html.motion-demo .orbit-one{animation:demo-orbit-turn 12s linear infinite!important}
+html.motion-demo .orbit-two{animation:demo-orbit-turn 8s linear infinite reverse!important}
+html.motion-demo .signal-line{animation:demo-data-sweep 3.2s ease-in-out infinite!important}
+html.motion-demo .signal-node{animation:demo-node-pulse 1.8s ease-in-out infinite!important}
+html.motion-demo .site-header .brand .brand-art{animation:demo-logo-alive 3s ease-in-out infinite!important}
+html.motion-demo .site-header .brand:hover .brand-art,
+html.motion-demo .site-header .brand:focus-visible .brand-art{animation:demo-logo-hover .85s ease-in-out infinite alternate!important}
+html.motion-demo .site-header .brand.brand-activated .brand-art{animation:demo-logo-tap .8s cubic-bezier(.2,.8,.2,1) both!important}
+@keyframes demo-grid-drift{from{background-position:0 0}to{background-position:84px 42px}}
+@keyframes demo-ambient-breathe{0%,100%{transform:scale(.88);opacity:.55}50%{transform:scale(1.15);opacity:1}}
+@keyframes demo-orbit-turn{to{transform:rotate(360deg)}}
+@keyframes demo-data-sweep{0%,100%{opacity:.12;clip-path:inset(0 100% 0 0)}45%,68%{opacity:1;clip-path:inset(0 0 0 0)}}
+@keyframes demo-node-pulse{0%,100%{transform:scale(.55);opacity:.25}50%{transform:scale(1.9);opacity:1}}
+@keyframes demo-logo-alive{0%,100%{transform:scale(1);filter:brightness(1) drop-shadow(0 0 2px rgba(41,216,255,.25))}50%{transform:scale(1.07);filter:brightness(1.45) drop-shadow(0 0 9px #29d8ff) drop-shadow(0 0 20px rgba(20,120,255,.8))}}
+@keyframes demo-logo-hover{from{transform:scale(1.05);filter:brightness(1.35) drop-shadow(0 0 8px #29d8ff)}to{transform:scale(1.11);filter:brightness(1.75) drop-shadow(0 0 14px #29d8ff) drop-shadow(0 0 28px #1478ff)}}
+@keyframes demo-logo-tap{0%{transform:scale(1)}42%{transform:scale(1.16);filter:brightness(2) drop-shadow(0 0 15px #fff) drop-shadow(0 0 32px #1478ff)}100%{transform:scale(1);filter:brightness(1)}}
