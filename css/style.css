@@ -88,3 +88,7 @@ footer{padding:34px 0;color:#a9bbcc;background:#020914}.footer-grid{display:grid
 @keyframes official-logo-energy{0%,55%{opacity:0;background-position:130% 0}64%{opacity:1}84%{opacity:.9;background-position:-130% 0}100%{opacity:0;background-position:-130% 0}}
 @keyframes official-logo-tap{0%{opacity:0;background-position:130% 0}20%{opacity:1}78%{opacity:1;background-position:-130% 0}100%{opacity:0;background-position:-130% 0}}
 @media(prefers-reduced-motion:reduce){.site-header .brand-art:after{display:none}}
+
+/* Safety rollback: one untouched official logo, with no animated overlay. */
+.site-header .brand:before,.site-header .brand-art:after{display:none!important}
+.site-header .brand-art,.site-header .brand:hover .brand-art,.site-header .brand:focus-visible .brand-art,.site-header .brand.brand-activated .brand-art{animation:none!important;filter:none!important;transform:none!important}
