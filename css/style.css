@@ -141,3 +141,68 @@ html.motion-demo .site-header .brand.brand-activated .brand-art.animated-officia
 @keyframes official-tree-current{0%,11%{clip-path:inset(92% 66% 0 0);opacity:0}15%{opacity:1}50%{clip-path:inset(0 66% 88% 0);opacity:1}57%,100%{clip-path:inset(0 66% 88% 0);opacity:0}}
 @keyframes official-tree-build-tap{0%{clip-path:inset(100% 66% 0 0);opacity:.1}70%,100%{clip-path:inset(0 66% 0 0);opacity:1;filter:brightness(1.4) drop-shadow(0 0 8px #29d8ff)}}
 @keyframes official-tree-current-tap{0%{clip-path:inset(91% 66% 0 0);opacity:0}15%{opacity:1}72%{clip-path:inset(0 66% 88% 0);opacity:1}100%{clip-path:inset(0 66% 88% 0);opacity:0}}
+
+/* Isolated logo-v2 preview — exact live-site header and official bitmap.
+   The official tree pixels rise from the trunk; the wordmark stays fixed and
+   receives a vertical metallic reflection. The complete cycle is five seconds. */
+html.logo-v2-preview .site-header .brand .brand-art.animated-official-logo,
+html.logo-v2-preview .site-header .brand:hover .brand-art.animated-official-logo,
+html.logo-v2-preview .site-header .brand:focus-visible .brand-art.animated-official-logo,
+html.logo-v2-preview .site-header .brand.brand-activated .brand-art.animated-official-logo{
+  position:relative!important;
+  overflow:hidden!important;
+  background:none!important;
+  animation:none!important;
+  transform:none!important;
+  filter:none!important;
+}
+html.logo-v2-preview .animated-official-logo>span{
+  position:absolute!important;
+  inset:0!important;
+  pointer-events:none!important;
+}
+html.logo-v2-preview .animated-official-logo .logo-wordmark{
+  display:block!important;
+  background:url('../assets/img/logo-g1x-officiel-transparent.png?v=logo-v2-preview-1') center/contain no-repeat!important;
+  clip-path:inset(0 0 0 38.95%)!important;
+  filter:drop-shadow(0 0 2px rgba(255,255,255,.14))!important;
+  animation:none!important;
+}
+html.logo-v2-preview .animated-official-logo .logo-tree{
+  display:block!important;
+  background:url('../assets/img/logo-g1x-officiel-transparent.png?v=logo-v2-preview-1') center/contain no-repeat!important;
+  clip-path:inset(100% 70.35% 0 0)!important;
+  animation:g1x-tree-rise-5s 5s cubic-bezier(.34,0,.18,1) infinite!important;
+  transform:none!important;
+  transform-origin:center!important;
+}
+html.logo-v2-preview .animated-official-logo .logo-current{
+  display:block!important;
+  clip-path:inset(0 0 0 38.95%)!important;
+  background:linear-gradient(0deg,transparent 25%,rgba(181,214,238,.10) 38%,#fff 49%,rgba(41,216,255,.62) 57%,transparent 72%)!important;
+  background-size:100% 280%!important;
+  background-position:0 140%!important;
+  -webkit-mask:url('../assets/img/logo-g1x-officiel-transparent.png?v=logo-v2-preview-1') center/contain no-repeat!important;
+  mask:url('../assets/img/logo-g1x-officiel-transparent.png?v=logo-v2-preview-1') center/contain no-repeat!important;
+  mix-blend-mode:screen!important;
+  opacity:0;
+  filter:none!important;
+  animation:g1x-metal-rise-5s 5s ease-in-out infinite!important;
+}
+@keyframes g1x-tree-rise-5s{
+  0%,6%{clip-path:inset(100% 70.35% 0 0);opacity:0;filter:brightness(.8)}
+  10%{opacity:1}
+  32%{clip-path:inset(0 70.35% 0 0);opacity:1;filter:brightness(1.55) drop-shadow(0 0 5px #29d8ff) drop-shadow(0 0 9px rgba(20,120,255,.8))}
+  44%,91%{clip-path:inset(0 70.35% 0 0);opacity:1;filter:brightness(1) drop-shadow(0 0 2px rgba(41,216,255,.3))}
+  96%,100%{clip-path:inset(0 70.35% 0 0);opacity:0;filter:brightness(1)}
+}
+@keyframes g1x-metal-rise-5s{
+  0%,29%{background-position:0 140%;opacity:0}
+  34%{background-position:0 140%;opacity:.9}
+  58%{background-position:0 -140%;opacity:1}
+  64%,100%{background-position:0 -140%;opacity:0}
+}
+@media(prefers-reduced-motion:reduce){
+  html.logo-v2-preview .animated-official-logo .logo-tree,
+  html.logo-v2-preview .animated-official-logo .logo-current{animation-duration:5s!important}
+}
