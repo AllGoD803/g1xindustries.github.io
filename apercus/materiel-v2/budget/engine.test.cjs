@@ -1,0 +1,7 @@
+const {test}=require('node:test');
+const assert=require('node:assert/strict');
+const E=require('./engine.js');
+const row=(frequency,anchor='2026-01-01',secondDay=15)=>({frequency,anchor,secondDay,amount:'10,10',label:'Test'});
+test('weekly and biweekly follow actual dates; semi-monthly is distinct',()=>{assert.deepEqual(E.dates(row('weekly'),'2026-01'),['2026-01-01','2026-01-08','2026-01-15','2026-01-22','2026-01-29']);assert.equal(E.dates(row('biweekly'),'2026-01').length,3);assert.deepEqual(E.dates(row('semimonthly'),'2026-01'),['2026-01-01','2026-01-15']);assert.throws(()=>E.dates(row('semimonthly','2026-01-15',15),'2026-01'));});
+test('month ends, leap years, quarterly and annual cycles',()=>{assert.deepEqual(E.dates(row('monthly','2026-01-31'),'2026-02'),['2026-02-28']);assert.deepEqual(E.dates(row('monthly','2024-01-31'),'2024-02'),['2024-02-29']);assert.deepEqual(E.dates(row('quarterly','2026-03-31'),'2026-06'),['2026-06-30']);assert.equal(E.dates(row('yearly','2026-03-01'),'2026-06').length,0);});
+test('cent arithmetic, negatives and invalid values',()=>{assert.equal(E.money('1 234,56'),123456);assert.equal(E.money('-20',true),-2000);assert.throws(()=>E.money('1,999'));assert.throws(()=>E.money('NaN'));assert.throws(()=>E.dates(row('monthly'),'2026-13'));const d={balance:'0',income:row('monthly'),expenses:[{...row('monthly'),amount:'20'}]};const r=E.compute(d,'2026-01');assert.equal(r.income,1010);assert.equal(r.outgoing,2000);assert.equal(r.ending,-990);assert.equal(r.minimum,-990);});
