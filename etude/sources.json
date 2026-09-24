@@ -1,0 +1,121 @@
+{
+  "date": "2026-09-24",
+  "type": "pre-feasibility, not financial solvency certification",
+  "sources": [
+    {
+      "key": "pi",
+      "title": "Raspberry Pi — Pi 5, spécifications",
+      "url": "https://www.raspberrypi.com/products/raspberry-pi-5/"
+    },
+    {
+      "key": "coral",
+      "title": "Coral — modèles compatibles avec Edge TPU",
+      "url": "https://coral.ai/docs/edgetpu/models-intro/"
+    },
+    {
+      "key": "gpu",
+      "title": "NVIDIA — GeForce RTX 4080 SUPER",
+      "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4080-family/"
+    },
+    {
+      "key": "tbeam",
+      "title": "LILYGO — T-Beam, variantes et alimentation",
+      "url": "https://lilygo.cc/products/t-beam"
+    },
+    {
+      "key": "gateway",
+      "title": "Semtech — circuits pour passerelles LoRa",
+      "url": "https://www.semtech.com/products/wireless-rf/lora-core"
+    },
+    {
+      "key": "airtime",
+      "title": "Semtech — calculateur LoRa",
+      "url": "https://www.semtech.com/design-support/lora-calculator"
+    },
+    {
+      "key": "radio",
+      "title": "ISDE — CNR / RSS-247, édition 4",
+      "url": "https://ised-isde.canada.ca/site/spectrum-management-telecommunications/en/devices-and-equipment/radio-equipment-standards/radio-standards-specifications-rss/rss-247-digital-transmission-systems-dtss-frequency-hopping-systems-fhss-and-licence-exempt-local"
+    },
+    {
+      "key": "sensor",
+      "title": "Sensirion — SHT45",
+      "url": "https://sensirion.com/products/catalog/SHT45"
+    },
+    {
+      "key": "siting",
+      "title": "NOAA / NWS — implantation des instruments",
+      "url": "https://www.weather.gov/abq/coop_siting"
+    },
+    {
+      "key": "windheight",
+      "title": "NOAA / NWS — implantation d’une station météo",
+      "url": "https://www.weather.gov/media/epz/mesonet/CWOP-Siting.pdf"
+    },
+    {
+      "key": "battery",
+      "title": "Victron — limites de température Lithium Battery Smart",
+      "url": "https://www.victronenergy.com/media/pg/Lithium_Battery_Smart/fr/technical-data.html"
+    },
+    {
+      "key": "solar",
+      "title": "Hydro-Québec — planifier une installation solaire",
+      "url": "https://www.hydroquebec.com/residentiel/mieux-consommer/conseils/planifier-installation-panneaux-solaires.html"
+    },
+    {
+      "key": "grant",
+      "title": "Hydro-Québec — aide solaire annoncée le 2 avril 2026",
+      "url": "https://nouvelles.hydroquebec.com/nouvelles/communiques/tout-quebec/hydro-quebec-lance-nouveaux-appuis-financiers-destines-soutenir-clients-residentiels-affaire-veulent-installer-panneaux-solaires.html"
+    },
+    {
+      "key": "wind",
+      "title": "U.S. Department of Energy — Small Wind Guidebook",
+      "url": "https://www.energy.gov/cmei/systems/windexchange/small-wind-guidebook"
+    },
+    {
+      "key": "hydro",
+      "title": "U.S. EIA — principes hydroélectriques",
+      "url": "https://www.eia.gov/energyexplained/hydropower/"
+    },
+    {
+      "key": "water",
+      "title": "Québec — autorisations des petites centrales",
+      "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/energie/production-approvisionnement-distribution/autorisations-petites-centrales-hydroelectriques"
+    },
+    {
+      "key": "lidar",
+      "title": "USGS — LiDAR et topographie",
+      "url": "https://www.usgs.gov/special-topics/earth-mri/topography"
+    },
+    {
+      "key": "spectral",
+      "title": "USGS — cartographie hyperspectrale",
+      "url": "https://www.usgs.gov/special-topics/earth-mri/hyperspectral-mapping"
+    },
+    {
+      "key": "gpr",
+      "title": "USGS — radar et sols conducteurs",
+      "url": "https://pubs.usgs.gov/of/2001/0425/intro.html"
+    },
+    {
+      "key": "ocr",
+      "title": "Tesseract.js — reconnaissance de texte dans le navigateur",
+      "url": "https://github.com/naptha/tesseract.js"
+    },
+    {
+      "key": "spoolman",
+      "title": "Spoolman — inventaire auto-hébergé, licence MIT",
+      "url": "https://github.com/Donkie/Spoolman"
+    },
+    {
+      "key": "actual",
+      "title": "Actual Budget — budget local et synchronisation",
+      "url": "https://actualbudget.org/"
+    },
+    {
+      "key": "breakout",
+      "title": "Adafruit — carte SHT45, produit 5665",
+      "url": "https://www.adafruit.com/product/5665"
+    }
+  ]
+}
