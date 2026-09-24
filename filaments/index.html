@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#06111f">
+  <meta name="description" content="Essayez G1X Filaments : lecture d’étiquettes de filament et inventaire personnel, directement dans votre navigateur.">
+  <meta name="referrer" content="no-referrer">
+  <title>G1X Filaments — Démo | G1X Industries</title>
+  <link rel="icon" href="../assets/img/logo-g1x-officiel-transparent.png">
+  <link rel="stylesheet" href="../css/style.css?v=tree-complete-15">
+  <link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body class="filament-app">
+  <a class="skip-link" href="#main" data-f="skip">Aller au contenu</a>
+  <header class="site-header">
+    <a class="brand" href="../#accueil" aria-label="G1X Industries — Accueil">
+      <span class="brand-art" aria-hidden="true"></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span><span class="sr-only" data-i18n="menu">Menu</span>
+    </button>
+    <nav id="main-nav" class="main-nav" aria-label="Navigation principale">
+      <a href="../#technologies" data-i18n="navTech">Technologies</a>
+      <a href="../#energie" data-i18n="navEnergy">Énergie</a>
+      <a href="../#intelligence" data-i18n="navAI">Intelligence</a>
+      <a href="../#projets" data-i18n="navProjects">Projets</a>
+      <a href="../#apropos" data-i18n="navAbout">À propos</a>
+      <a href="../#contact" data-i18n="navContact">Contact</a>
+    </nav>
+    <div class="language" aria-label="Choix de la langue">
+      <button type="button" data-lang="fr" class="active">FR</button><span>|</span><button type="button" data-lang="en">EN</button>
+    </div>
+  </header>
+  <main id="main" class="f-main">
+    <div class="wrap">
+      <a class="f-back" href="../#projets"><span aria-hidden="true">←</span><span data-f="back">Retour aux projets G1X</span></a>
+      <div class="f-title"><div><h1>G1X Filaments</h1><p data-f="lead">De l’étiquette à l’inventaire. Photographiez, vérifiez, ajoutez.</p></div><span class="f-tag" data-f="demo">DÉMO INTERACTIVE</span></div>
+      <noscript><p>JavaScript est nécessaire pour utiliser cette démo. / JavaScript is required for this demo.</p></noscript>
+      <div class="f-layout">
+        <section class="f-panel" aria-labelledby="scan-title">
+          <div class="f-panel-head"><span class="f-step" aria-hidden="true">01</span><h2 id="scan-title" data-f="scanTitle">Lire une étiquette</h2></div>
+          <div class="f-content">
+            <div id="upload-zone" class="f-upload">
+              <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M8 5l1.5-2h5L16 5h4a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V7a2 2 0 012-2z"/><circle cx="12" cy="12.5" r="4"/></svg>
+              <h3 data-f="frameTitle">Une boîte, une étiquette.</h3><p class="f-muted" data-f="frameHint">Cadrez le texte de près, bien éclairé et sans reflet.</p>
+              <div class="f-actions"><button class="f-btn f-btn-primary" id="camera-button" type="button" data-f="camera">Prendre une photo</button><button class="f-btn" id="upload-button" type="button" data-f="upload">Choisir une image</button></div>
+              <input id="camera-input" type="file" accept="image/*" capture="environment" aria-label="Prendre une photo">
+              <input id="image-input" type="file" accept="image/*" aria-label="Choisir une image">
+            </div>
+            <div class="f-actions f-secondary-actions"><button id="sample-button" class="f-btn f-btn-text" type="button" data-f="sample">Essayer avec une étiquette fictive</button><button id="manual-button" class="f-btn f-btn-text" type="button" data-f="manual">Saisir manuellement</button></div>
+            <figure id="image-preview" class="f-preview" hidden><canvas id="preview-canvas" role="img" aria-label="Étiquette sélectionnée"></canvas><figcaption id="image-caption"></figcaption></figure>
+            <div id="ocr-actions" class="f-actions f-ocr-actions" hidden><button id="recognize-button" class="f-btn f-btn-primary" type="button" data-f="recognize">Lire cette étiquette</button><button id="cancel-scan" class="f-btn" type="button" data-f="cancel" hidden>Annuler</button></div>
+            <progress id="ocr-progress" class="f-progress" max="1" value="0" aria-label="Progression de la lecture" hidden></progress>
+            <p id="scan-status" class="f-status" role="status" aria-live="polite"></p>
+            <div id="matches" class="f-match-list" aria-label="Correspondances proposées"></div>
+            <details class="f-raw" id="raw-details"><summary data-f="rawTitle">Texte lu ou référence à rechercher</summary><label for="raw-text" class="sr-only" data-f="rawTitle">Texte lu ou référence à rechercher</label><textarea id="raw-text" maxlength="15000" spellcheck="false" placeholder="Bambu Lab · PLA Silk+ · Gold · 13405"></textarea><button id="match-button" type="button" class="f-btn" data-f="find">Chercher dans le catalogue d’essai</button></details>
+            <p class="f-private"><svg width="17" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg><span data-f="privacy">La photo reste sur votre appareil. La première lecture télécharge le moteur de reconnaissance.</span></p>
+            <section class="f-form-section" aria-labelledby="verify-title">
+              <div class="f-form-title"><span class="f-step" aria-hidden="true">02</span><h2 id="verify-title" data-f="verify">Vérifier la fiche</h2></div>
+              <form id="filament-form">
+                <div class="f-grid">
+                  <div class="f-field"><label for="brand" data-f="brand">Marque</label><input id="brand" name="brand" required maxlength="100" autocomplete="off" placeholder="Bambu Lab"></div>
+                  <div class="f-field"><label for="material" data-f="material">Matière et gamme</label><input id="material" name="material" required maxlength="100" autocomplete="off" placeholder="PLA Silk+"></div>
+                  <div class="f-field"><label for="color" data-f="color">Nom de la couleur</label><input id="color" name="color" required maxlength="100" autocomplete="off" placeholder="Gold"></div>
+                  <div class="f-field"><label for="code" data-f="code">Code couleur / référence</label><input id="code" name="code" maxlength="60" autocomplete="off" placeholder="13405"></div>
+                  <div class="f-field"><label for="quantity" data-f="quantity">Nombre de bobines</label><input id="quantity" name="quantity" type="number" min="1" max="1000" step="1" required value="1" inputmode="numeric"></div>
+                  <div class="f-field"><label for="price" data-f="price">Prix payé / unité · CAD</label><input id="price" name="price" type="text" inputmode="decimal" maxlength="12" placeholder="19,99" aria-describedby="price-help"></div>
+                </div>
+                <div class="f-form-foot"><button type="submit" class="f-btn f-btn-primary" id="save-button" data-f="add">Confirmer et ajouter</button><button type="button" class="f-btn f-form-cancel" id="cancel-edit" data-f="cancelEdit" hidden>Annuler la modification</button><p id="price-help" data-f="priceHelp">Prix facultatif, à saisir selon votre facture. Aucun prix n’est deviné à partir de la photo.</p></div>
+                <p id="form-status" class="f-status" role="status" aria-live="polite"></p>
+              </form>
+            </section>
+          </div>
+        </section>
+        <section id="inventory-panel" class="f-panel" aria-labelledby="inventory-title">
+          <div class="f-panel-head"><span class="f-step" aria-hidden="true">03</span><h2 id="inventory-title" data-f="inventory">Votre inventaire d’essai</h2></div>
+          <div class="f-content">
+            <div class="f-totals"><div class="f-total"><span data-f="spools">Bobines</span><strong id="total-count">0</strong></div><div class="f-total"><span data-f="value">Valeur renseignée · CAD</span><strong id="total-value">0,00 $</strong></div></div>
+            <p id="unpriced-note" class="f-count-note"></p>
+            <label for="search" class="sr-only" data-f="search">Rechercher une couleur, une marque…</label><input id="search" class="f-search" type="search" data-f-placeholder="search" placeholder="Rechercher une couleur, une marque…" maxlength="100">
+            <div id="inventory-list" class="f-inventory"></div>
+            <div id="empty" class="f-empty"><strong data-f="emptyTitle">Votre première bobine commence ici.</strong><p data-f="emptyHint">Scannez une étiquette ou essayez l’exemple, puis confirmez sa fiche.</p></div>
+            <p id="no-results" class="f-muted" data-f="noResults" hidden>Aucune bobine ne correspond à votre recherche.</p>
+            <div class="f-inventory-actions f-actions"><button id="export-button" class="f-btn" type="button" data-f="export" disabled>Exporter</button><button id="import-button" class="f-btn" type="button" data-f="import">Importer</button><input id="import-input" type="file" accept="application/json,.json" aria-label="Importer un inventaire"></div>
+            <p id="storage-status" class="f-status" role="status" aria-live="polite"></p>
+            <p class="f-footnote" data-f="storageHint">Inventaire enregistré uniquement dans ce navigateur. Exportez-le pour le conserver ou le transférer. Aucun compte requis.</p>
+          </div>
+        </section>
+      </div>
+      <aside class="f-bottom"><strong data-f="limitsTitle">Une démo à essayer, un catalogue à enrichir.</strong> <span data-f="limits">5 références Bambu Lab sont proposées. Les autres filaments restent saisissables manuellement. La reconnaissance peut se tromper : vérifiez toujours la marque, la gamme et la référence. Cette démo n’est pas reliée à G1X-Control ni à HueForge.</span><details class="f-catalog"><summary data-f="catalogTitle">Voir les références du catalogue d’essai</summary><ul id="catalog-list"></ul><p data-f="swatchNote">Les pastilles de couleur sont indicatives. Le nom et la référence font foi.</p></details></aside>
+    </div>
+  </main>
+  <footer class="f-footer"><div class="wrap"><span>G1X Industries · G1X Filaments</span><a href="../#contact" data-f="contact">Parlons du projet</a></div></footer>
+  <script src="engine.js?v=1" defer></script>
+  <script src="app.js?v=1" defer></script>
+</body>
+</html>
