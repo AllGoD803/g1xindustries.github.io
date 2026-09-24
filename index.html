@@ -6,16 +6,18 @@
   <meta name="description" content="G1X Industries développe au Québec des solutions d’énergie intelligente, d’intelligence locale et d’infrastructures technologiques autonomes.">
   <meta name="theme-color" content="#06111f">
   <title>G1X Industries | Énergie, technologie et intelligence locale</title>
+
   <link rel="stylesheet" href="css/style.css?v=tree-complete-15">
+  <link rel="stylesheet" href="css/hardware.css?v=20260924-1">
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="skip">Aller au contenu</a>
   <header class="site-header">
     <a class="brand" href="#accueil" aria-label="G1X Industries — Accueil">
-      <span class="brand-art animated-official-logo" aria-hidden="true">
-        <span class="logo-wordmark"></span>
-        <span class="logo-tree"></span>
-        <span class="logo-current"></span>
+      <span class="brand-art kinetic-logo" aria-hidden="true">
+        <span class="kinetic-wordmark"></span><span class="kinetic-base"></span><span class="kinetic-fill"></span>
+        <span class="kinetic-wave"><span class="kinetic-mask"><span class="kinetic-front"></span></span></span>
+        <span class="kinetic-shine"><span class="kinetic-mask"><span class="kinetic-shine-front"></span></span></span>
       </span>
     </a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
@@ -35,19 +37,7 @@
   </header>
 
   <main id="main">
-    <section id="accueil" class="hero">
-      <div class="hero-grid"></div>
-      <div class="hero-glow"></div>
-      <div class="interactive-field" aria-hidden="true">
-        <span class="data-orbit orbit-one"></span>
-        <span class="data-orbit orbit-two"></span>
-        <span class="signal-line signal-one"></span>
-        <span class="signal-line signal-two"></span>
-        <span class="signal-node node-one"></span>
-        <span class="signal-node node-two"></span>
-        <span class="signal-node node-three"></span>
-      </div>
-      <div class="cursor-glow" aria-hidden="true"></div>
+    <section id="accueil" class="hero hardware-hero">
       <div class="hero-content wrap">
         <p class="eyebrow" data-i18n="heroEyebrow">Conçu et développé au Québec</p>
         <h1 data-i18n="heroTitle">L’intelligence locale rencontre l’énergie de demain.</h1>
@@ -61,18 +51,38 @@
           <span data-i18n="point2">Énergie résiliente</span>
           <span data-i18n="point3">IA en périphérie</span>
         </div>
+        <div id="component-readout" class="component-readout" aria-live="polite"><strong>Une architecture de terrain</strong><p>Touchez un repère pour explorer les composants du concept.</p></div>
+        <div class="motion-controls"><button id="transmit-demo" type="button">Simuler une transmission</button><button id="motion-toggle" type="button" aria-pressed="false">Mettre en pause</button></div>
+        <span class="hw-controls-note" data-preview-i18n="note">Animation illustrative · aucune télémétrie réelle</span>
       </div>
-      <div class="hero-visual" aria-hidden="true">
-        <div class="nexus-box"><b>G1X</b><i></i><small>GEN1 NEXUS</small></div>
-        <div class="beacon"><i></i><b></b><span></span></div>
-        <div class="data-card"><small>G1X LIVE</small><strong>1015 hPa</strong><span>9.7 °C</span><em></em></div>
-      </div>
+      <figure class="hardware-figure">
+        <div class="hardware-scene"><div class="hardware-camera">
+          <img src="assets/img/hardware/station-lora.webp" width="1672" height="941" fetchpriority="high" alt="Rendu conceptuel d’une balise LoRa en forêt : antenne verticale, mât, boîtier, panneau solaire et abri de capteur.">
+          <button class="hw-hotspot" data-part="radio" aria-label="01 — Antenne LoRa" aria-pressed="false"><span>1</span></button>
+          <button class="hw-hotspot" data-part="enclosure" aria-label="02 — Boîtier et fixation" aria-pressed="false"><span>2</span></button>
+          <button class="hw-hotspot" data-part="solar" aria-label="03 — Panneau solaire" aria-pressed="false"><span>3</span></button>
+          <button class="hw-hotspot" data-part="sensor" aria-label="04 — Abri du capteur" aria-pressed="false"><span>4</span></button>
+          <i class="hw-ring" aria-hidden="true"></i><i class="hw-ring" aria-hidden="true"></i>
+        </div></div>
+        <figcaption class="hardware-caption" data-preview-i18n="concept">Visualisation conceptuelle · assemblage à valider</figcaption>
+      </figure>
     </section>
 
     <section id="technologies" class="tech-strip" aria-label="Technologies G1X">
       <div class="wrap strip-grid">
         <a href="#energie">◉ HydroCore</a><a href="#energie">≋ AeroChannel</a><a href="#energie">☼ SolarUltra</a>
         <a href="#intelligence">◇ GEN1 Nexus</a><a href="#balises">⌁ Balises G1X</a><a href="#geoscan">△ GeoScan</a><a href="#techops">▱ TechOps</a>
+      </div>
+    </section>
+
+
+    <section class="section dark receiver-section" id="reception">
+      <div class="wrap">
+        <div class="section-heading"><div><p class="eyebrow" data-preview-i18n="receiverTag">Du terrain au calcul local</p><h2 data-preview-i18n="receiverTitle">L’information arrive ici.</h2></div><p data-preview-i18n="receiverText">Le module ESP32 LoRa reçoit les messages radio et les transmet au Pi 5 par USB. Le serveur local les conserve et les rend disponibles aux outils G1X.</p></div>
+        <figure class="receiver-picture"><img src="assets/img/hardware/reception-locale.webp" width="1672" height="941" loading="lazy" alt="Poste G1X conceptuel : écran panoramique, deux écrans superposés, carte graphique externe, mini-PC et modules reliés en USB.">
+          <figcaption data-preview-i18n="receiverCaption">Visualisation inspirée du poste G1X réel · écrans de démonstration · disposition et matériel illustratifs.</figcaption>
+        </figure>
+        <ol class="receiver-flow"><li><b>01</b><span data-preview-i18n="flow1">Balise sur le terrain</span></li><li><b>02</b><span data-preview-i18n="flow2">ESP32 LoRa · USB</span></li><li><b>03</b><span data-preview-i18n="flow3">Traitement local</span></li><li><b>04</b><span data-preview-i18n="flow4">G1X-Control</span></li></ol>
       </div>
     </section>
 
@@ -158,7 +168,9 @@
           <p data-i18n="filamentsText">Photographiez une étiquette, vérifiez sa référence et créez votre inventaire de filaments directement dans votre navigateur.</p>
           <a class="button primary" href="filaments/" data-i18n="filamentsTry">Essayer la démo</a>
         </article>
-      </div>
+      
+          <article class="project-card"><p class="product-demo-tag" data-preview-i18n="products">Produit numérique · démo</p><h3>G1X Budget</h3><p data-preview-i18n="budgetText">Un budget adapté à votre paie, à vos paiements et à vos fournisseurs. Des catégories modifiables, des calculs automatiques.</p><a class="button primary" href="budget/" data-preview-i18n="budgetAction">Essayer G1X Budget</a><p class="budget-price-note" data-preview-i18n="priceNote">Démo gratuite · conditions de la future version commerciale à définir.</p></article>
+</div>
     </section>
 
     <section class="section vision-showcase"><div class="wrap split"><div><p class="eyebrow" data-i18n="visionTag">Une vision pour le territoire</p><h2 data-i18n="visionTitle">Les ressources, les données et les décisions restent ici.</h2><p data-i18n="visionText">Un écosystème local où l’énergie, les capteurs et l’intelligence travaillent ensemble au service des communautés.</p></div><a class="poster-feature localized-poster-link" href="assets/img/projects/vision-g1x-fr.webp" data-fr-src="assets/img/projects/vision-g1x-fr.webp" data-en-src="assets/img/projects/vision-g1x-en.webp" target="_blank" aria-label="Voir l’affiche de la vision G1X complète"><img class="localized-poster" src="assets/img/projects/vision-g1x-fr.webp" data-fr-src="assets/img/projects/vision-g1x-fr.webp" data-en-src="assets/img/projects/vision-g1x-en.webp" alt="Vision territoriale intégrée de G1X Industries" loading="lazy"></a></div></section>
@@ -168,6 +180,8 @@
 
   <footer><div class="wrap footer-grid"><div class="footer-brand"><span class="brand-art"></span></div><p>Montréal, Québec, Canada<br>© 2025 G1X Industries</p><div><a href="#technologies" data-i18n="navTech">Technologies</a><a href="#contact" data-i18n="navContact">Contact</a></div><div class="language"><button type="button" data-lang="fr" class="active">FR</button><span>|</span><button type="button" data-lang="en">EN</button></div></div></footer>
   <script src="js/app.js?v=filaments-1" defer></script>
+<script src="js/hardware.js?v=20260924-1" defer></script>
 </body>
 </html>
+
 
