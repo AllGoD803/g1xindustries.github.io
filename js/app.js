@@ -4,6 +4,8 @@ const translations={
 };
 Object.assign(translations.fr,{demoData:"DONNÉES DE DÉMONSTRATION",wind:"Vent",temperature:"Température",pressure:"Pression",last24:"Évolution — 24 dernières heures",demoNote:"Valeurs simulées pour illustrer l’interface. Connexion aux capteurs requise pour afficher des données réelles.",systemOnline:"SYSTÈME EN LIGNE",fieldInputs:"ENTRÉES TERRAIN",localCompute:"CALCUL LOCAL",services:"SERVICES",analytics:"Analytique",alerts:"Alertes",sync:"Synchronisation",localStorage:"Stockage local",encryption:"Chiffrement",power:"Alimentation",protection:"Protection visée",conceptNote:"Architecture conceptuelle — spécifications finales à valider pendant le développement."});
 Object.assign(translations.en,{demoData:"DEMONSTRATION DATA",wind:"Wind",temperature:"Temperature",pressure:"Pressure",last24:"Trend — Last 24 hours",demoNote:"Simulated values illustrating the interface. A sensor connection is required to display real data.",systemOnline:"SYSTEM ONLINE",fieldInputs:"FIELD INPUTS",localCompute:"LOCAL COMPUTE",services:"SERVICES",analytics:"Analytics",alerts:"Alerts",sync:"Synchronization",localStorage:"Local storage",encryption:"Encryption",power:"Power input",protection:"Target protection",conceptNote:"Conceptual architecture — final specifications to be validated during development."});
+Object.assign(translations.fr,{filamentsTag:'Démo interactive',filamentsText:'Photographiez une étiquette, vérifiez sa référence et créez votre inventaire de filaments directement dans votre navigateur.',filamentsTry:'Essayer la démo'});
+Object.assign(translations.en,{filamentsTag:'Interactive demo',filamentsText:'Photograph a label, check its reference and build your filament inventory directly in your browser.',filamentsTry:'Try the demo'});
 const menuButton=document.querySelector('.menu-toggle');
 const menu=document.querySelector('.main-nav');
 menuButton.addEventListener('click',()=>{const open=menu.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));});
@@ -50,3 +52,4 @@ if('IntersectionObserver'in window&&!matchMedia('(prefers-reduced-motion: reduce
 }else{
   document.querySelectorAll('.reveal-ready').forEach(node=>node.classList.add('is-visible'));
 }
+
